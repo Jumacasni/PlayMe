@@ -2,6 +2,8 @@
 
 :warning: **Este proyecto aún está en desarrollo** *(versión 0.1)* :warning:
 
+🔧 La configuración del entorno se puede encontrar [aquí](docs/configuracion_git.md)
+
 ## Descripción del problema 📝
 
 Hace ya un tiempo que se popularizaron los bares que cuentan con varias estanterías llenas de juegos de mesa para todo tipo de jugadores. Estos sitios se han convertido en el mejor plan para muchas familias, grupos de amigos y amigas, etc. Por ejemplo, aquí en Granada es muy conocido el pub *Continental*, que cuenta con más de 200 juegos de mesa diferentes.
