@@ -1,0 +1,6 @@
+entidad:
+  - playme/src/usuario.py
+  - playme/src/trabajador.py
+  - playme/src/cliente.py
+  - playme/src/juego.py
+  - playme/src/catalogo.py
