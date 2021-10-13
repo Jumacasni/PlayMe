@@ -1,31 +1,58 @@
 # PlayMe
 
-:warning: **Este proyecto aún está en desarrollo** *(versión 0.1)* :warning:
+:warning: **Este proyecto aún está en desarrollo** *(versión 1.1)* :warning:
 
-🔧 La configuración del entorno se puede encontrar [aquí](docs/configuracion_git.md)
+🔧 [Configuración del entorno](docs/configuracion_git.md)
 
-## Descripción del problema 📝
+📝 [Descripción del problema](docs/descripcion.md)
 
-Hace ya un tiempo que se popularizaron los bares que cuentan con varias estanterías llenas de juegos de mesa para todo tipo de jugadores. Estos sitios se han convertido en el mejor plan para muchas familias, grupos de amigos y amigas, etc. Por ejemplo, aquí en Granada es muy conocido el pub *Continental*, que cuenta con más de 200 juegos de mesa diferentes.
+🎉 [Solución propuesta y lógica de negocio](docs/propuesta.md)
 
-El problema que se encuentra en estos lugares es que es muy difícil elegir un juego entre tantos disponibles y entonces lo que se hace es coger varios de ellos y llevarlos a la mesa. Esto puede derivar a su vez varios problemas:
-* Los dueños del local no pueden proporcionar un juego de mesa porque otras mesas se han adelantado y tampoco pueden predecir el tiempo que van a invertir en él, es decir, el tiempo que pasará hasta que vuelva a estar disponible.
-* El juego resulta aburrido porque no es el tipo de juego que les gusta a los de la mesa, con lo cual todo el tiempo que se ha invertido leyendo las instrucciones, preparando el juego y demás se ha perdido
-* Una mesa puede haber cogido diez juegos de mesa pero sólo va a estar utilizando uno (y no se levantan para devolver los nueve restantes), con lo cual estos juegos restantes podrían estar siendo aprovechados por otra mesa
-* Un juego de mesa tiene un tiempo de juego estimado, pero una mesa está perdiendo el tiempo a propósito desaprovechando el juego y por lo tanto dejando a otras personas sin disfrutar de él
-* Hay juegos que no son usados prácticamente y ocupan un espacio que podrían ocupar otros juegos que sí tienen más interés entre los clientes del local, al igual que hay juegos que gustan mucho y de los que podría haber más unidades en el local.
+## Hitos e historias de usuario 👥
 
-## Solución propuesta y lógica de negocio 🎉
+Se han definido los siguientes 5 hitos (5 productos mínimamente viables):
 
-Se propone crear una aplicación para automatizar y facilitar todas las gestiones relacionadas con el préstamo de juegos de mesa.
+- [1. Administración del catálogo de juegos de mesa](https://github.com/Jumacasni/PlayMe/milestone/2): contiene historias de usuario que crean un producto mínimamente viable cuya funcionalidad que los trabajadores puedan **ofrecer un catálogo de juegos de mesa** de un local:
+	- [[HU1] Registrar cuenta de un trabajador](https://github.com/Jumacasni/PlayMe/issues/3)
+	- [[HU3] Añadir un juego de mesa](https://github.com/Jumacasni/PlayMe/issues/5)
+	- [[HU4] Eliminar un juego de mesa ](https://github.com/Jumacasni/PlayMe/issues/6)
+	- [[HU5] Modificar un juego de mesa ](https://github.com/Jumacasni/PlayMe/issues/7)
+	- [[HU6] Dejar de mostrar un juego de mesa en el catálogo de los clientes](https://github.com/Jumacasni/PlayMe/issues/8)
+	- [[HU7] Mostrar un juego de mesa en el catálogo de los clientes](https://github.com/Jumacasni/PlayMe/issues/9)
 
-Los usuarios disponen del catálogo completo de juegos de mesa del local. A este catálogo se le podrán aplicar distintos filtros tales como: número de jugadores en la mesa, tipo de juego, estado del juego (si está incompleto o le faltan piezas), disponibilidad (si el juego está siendo usado por otra mesa), etc. Los usuarios podrán ver todo lo relacionado con el juego, incluyendo reseñas de usuarios, las propias instrucciones del juego y vídeo tutoriales de cómo jugar. Esto evitará que los usuarios tengan que levantarse frecuentemente y tener que mirar caja por caja para ver si finalmente eligen el juego o no. Si un juego no está disponible porque está usándose en otras mesas, podrán ver **el tiempo estimado para que un juego vuelva a estar disponible**.
+- [2. Gestión de préstamos de juegos de mesa](https://github.com/Jumacasni/PlayMe/milestone/3): contiene historias de usuario que crean un producto mínimamente viable cuya funcionalidad es registrar los préstamos de juegos de mesa asociados a un cliente y sacar beneficio de ello sabiendo **cuánto tiempo de juego le queda a los clientes**:
+	- [[HU2] Registrar cuenta de un cliente](https://github.com/Jumacasni/PlayMe/issues/4)
+	- [[HU8] Registrar préstamo de juego a un cliente](https://github.com/Jumacasni/PlayMe/issues/10)
+	- [[HU9] Aumentar tiempo de préstamo de un juego](https://github.com/Jumacasni/PlayMe/issues/11)
+	- [[HU10] Finalizar préstamo de juego a un cliente](https://github.com/Jumacasni/PlayMe/issues/12)
+	- [[HU11] Ver cuánto tiempo le queda a un juego prestado para volver a estar disponible](https://github.com/Jumacasni/PlayMe/issues/13)
 
-Los usuarios podrán calificar los juegos de mesa de acuerdo a su experiencia y, a partir de estas calificaciones, recibir **recomendaciones** de otros juegos de mesa que pueden resultarles interesantes a través de un **sistema de recomendación**.
+- [3. Reseñas de juegos de mesa](https://github.com/Jumacasni/PlayMe/milestone/4): contiene historias de usuario que crean un producto mínimamente viable cuya funcionalidad es **recomendar juegos de mesa** a los usuarios en base a sus reseñas:
+	- [[HU12] Añadir reseña de un juego de mesa](https://github.com/Jumacasni/PlayMe/issues/14)
+	- [[HU13] Editar reseña de un juego de mesa](https://github.com/Jumacasni/PlayMe/issues/15)
+	- [[HU14] Eliminar reseña de un juego de mesa](https://github.com/Jumacasni/PlayMe/issues/16)
+	- [[HU15] Recibir recomendaciones de juegos de mesa](https://github.com/Jumacasni/PlayMe/issues/17)
 
-Los dueños del local podrán **optimizar el tiempo** que las mesas usan los distintos juegos, basándose en el tiempo medio de un juego para un cierto número de jugadores. De esta manera, pueden también **calcular el tiempo para que una mesa termine de jugar a un juego**.
+- [4. Navegar en el catálogo de juegos de mesa](https://github.com/Jumacasni/PlayMe/milestone/5): contiene historias de usuario que crean un producto mínimamente viable cuya funcionalidad es ofrecer una navegación del catálogo a todos los usuarios pudiendo **aplicar distintos filtros** en base a sus necesidades:
+	- [[HU16] Consultar el catálogo de juegos para clientes](https://github.com/Jumacasni/PlayMe/issues/18)
+	- [[HU17] Consultar el catálogo de juegos para trabajadores](https://github.com/Jumacasni/PlayMe/issues/19)
+	- [[HU18] Consultar información sobre un juego](https://github.com/Jumacasni/PlayMe/issues/20)
+	- [[HU19] Filtrar catálogo de juegos por tiempo estimado de juego](https://github.com/Jumacasni/PlayMe/issues/21)
+	- [[HU20] Filtrar catálogo de juegos por juegos que están disponibles ahora mismo](https://github.com/Jumacasni/PlayMe/issues/22)
+	- [[HU21] Filtrar catálogo de juegos por número de jugadores](https://github.com/Jumacasni/PlayMe/issues/23)
 
-Los dueños del local también podrán analizar **cuáles son los juegos más (menos) usados** en el local y **predecir** qué juegos nuevos pueden tener más (menos) éxito.
+- [5. Estadísticas de juegos de mesa](https://github.com/Jumacasni/PlayMe/milestone/6): contiene historias de usuario que crean un producto mínimamente viable cuya funcionalidad es ofrecer estadísticas a los trabajadores para que puedan saber c**uáles son los juegos que más y menos gustan**, y de esa forma hacer cambios en el catálogo del local:
+	- [[HU22] Analizar estadísticas del uso de juegos de mesa por los clientes](https://github.com/Jumacasni/PlayMe/issues/24)
+
+## Avances en las historias de usuario ✏️
+
+En el fichero [cc.yaml](cc.yaml) se encuentran las entidades creadas para el avance de las primeras historias de usuario:
+- Clase [**Usuario**](playme/src/usuario.py): se define la clase Usuario, que representa un usuario de un local, ya sea un trabajador o un cliente. Avanza [[HU1] Registrar cuenta de un trabajador](https://github.com/Jumacasni/PlayMe/issues/3).
+- Clase [**Trabajador**](playme/src/trabajador.py): se define la clase Trabajador, que es un trabajador de un local. Avanza [[HU1] Registrar cuenta de un trabajador](https://github.com/Jumacasni/PlayMe/issues/3).
+- Clase [**Cliente**](playme/src/cliente.py): se define la clase Cliente, que es un cliente de un local. Avanza [[HU2] Registrar cuenta de un cliente](https://github.com/Jumacasni/PlayMe/issues/4).
+- Clase [**Juego**](playme/src/juego.py): se define la clase Juego, que representa un juego de mesa. Avanza [[HU3] Añadir un juego de mesa](https://github.com/Jumacasni/PlayMe/issues/5).
+- Clase [**Catalogo**](playme/src/catalogo.py): se define la clase Catalogo, que representa el catálogo y que está formado por juegos de mesa. Avanza [[HU3] Añadir un juego de mesa](https://github.com/Jumacasni/PlayMe/issues/5).
+
 
 ## Licencia 📄
 
