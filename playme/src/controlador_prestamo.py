@@ -6,8 +6,8 @@ class ControladorPrestamo:
 	def __init__(self):
 		self.prestamos = []
 
-	def crear_prestamo(self, id_juego):
-		p = Prestamo(id_juego)
+	def crear_prestamo(self, juego):
+		p = Prestamo(juego)
 		self.prestamos.append(p)
 
 	def finalizar_prestamo(self, prestamo):
