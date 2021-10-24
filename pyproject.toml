@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "playme"
+version = "0.1.0"
+description = "Sistema de gestión de préstamos de juegos de mesa"
+authors = ["jumacasni <jumacasni@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+assertpy = "^1.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[tool.poetry.scripts]
+test = 'scripts:test'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
