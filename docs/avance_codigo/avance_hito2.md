@@ -7,6 +7,6 @@ Corresponde al avance de código hecho para las HU e issues del milestone [2. Fu
 	- [Estructura para la clase controladora de préstamos](https://github.com/Jumacasni/PlayMe/issues/45)
 	- [Métodos para que un usuario pueda controlar los préstamos](https://github.com/Jumacasni/PlayMe/issues/35)
 	- [Método para calcular el tiempo restante de un préstamo](https://github.com/Jumacasni/PlayMe/issues/36)
-	- [Implementar tests unitarios para préstamos](https://github.com/Jumacasni/PlayMe/issues/49)
 	- [La fecha de inicio y finalización del préstamo debe mostrarse en formato 'dd/mm/yy hh:mm'](https://github.com/Jumacasni/PlayMe/issues/51)
+	- [Implementar tests unitarios para [HU1]](https://github.com/Jumacasni/PlayMe/issues/49)
 - [Actualizar cc.yaml](https://github.com/Jumacasni/PlayMe/issues/53)
