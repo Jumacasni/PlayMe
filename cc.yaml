@@ -1,3 +1,9 @@
 entidad:
   - playme/src/juego.py
   - playme/src/prestamo.py
+  - playme/src/controlador_prestamo.py
+lenguaje: Python 3.8
+test:
+  - playme/test/test_prestamo.py
+  - playme/test/test_controlador_prestamo.py
+fichero_tareas: pyproject.toml
