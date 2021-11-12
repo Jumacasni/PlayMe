@@ -2,5 +2,5 @@ import subprocess
 
 def test():
 	subprocess.run(
-		['pytest', 'playme/test']
+		['pytest', 'tests']
 	)

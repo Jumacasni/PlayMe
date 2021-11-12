@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.append('playme/src/')
+sys.path.append('playme/')
 
 from prestamo import Prestamo
 from juego import Juego
