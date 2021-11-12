@@ -6,4 +6,4 @@ lenguaje: Python 3.8
 test:
   - playme/test/test_prestamo.py
   - playme/test/test_controlador_prestamo.py
-fichero_tareas: pyproject.toml
+fichero_tareas: tasks.py
