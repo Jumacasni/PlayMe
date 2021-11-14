@@ -628,9 +628,9 @@ free software which everyone can redistribute and change under these terms.
 to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
-
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
+  
+    PlayMe es una aplicación para automatizar y facilitar todas las gestiones relacionadas con el préstamo de juegos de mesa en bares/pubs que dispongan de este servicio.
+    Copyright (C) 2021  Juan Manuel Castillo Nievas
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published
