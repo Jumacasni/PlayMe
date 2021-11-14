@@ -4,11 +4,11 @@ from datetime import datetime
 class ControladorPrestamo:
 
 	def __init__(self):
-		self.prestamos = []
+		self.prestamos = {}
 
 	def crear_prestamo(self, juego):
 		p = Prestamo(juego)
-		self.prestamos.append(p)
+		self.prestamos[juego.id] = p
 
 	def finalizar_prestamo(self, prestamo):
 		if (prestamo.activo):
