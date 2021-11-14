@@ -15,6 +15,9 @@ class ControladorPrestamo:
 		else:
 			return False
 
+	def devolver_prestamo(self, juego):
+		return self.prestamos[juego.id]
+
 	def finalizar_prestamo(self, prestamo):
 		if (prestamo.activo):
 			prestamo.activo = False
