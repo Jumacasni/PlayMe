@@ -111,7 +111,7 @@ CMD ["invoke", "test"]
 
 Este contenedor pesa **244MB**.
 
-<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/docker-pypy-slime.png" width="100%" height="100%">
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/docker-pypy-slim.png" width="100%" height="100%">
 
 ## Ejecución del contenedor
 
