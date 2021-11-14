@@ -69,3 +69,13 @@ def test_tiempo_restante_prestamo_inactivo():
 	res = controlador.tiempo_restante(prestamo)
 
 	assert res == None
+
+def test_devolver_prestamo():
+	controlador = ControladorPrestamo()
+	juego = Juego(1, "Aventureros al Tren")
+	prestamo = Prestamo(juego)
+
+	controlador.crear_prestamo(juego)
+	res = controlador.devolver_prestamo(juego)
+
+	assert res.juego == juego
