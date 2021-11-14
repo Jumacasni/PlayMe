@@ -6,14 +6,10 @@ RUN apk update \
 	&& apk add bash \
 	&& adduser -D -h /home/playme -s /bin/bash playme \
 	&& mkdir -p /app/test \
-	&& chown playme /app/test
+	&& chown playme /app/test \
+	&& pip3 install invoke pytest assertpy
 
 WORKDIR /app/test
-
-COPY requirements.txt .
-
-RUN pip3 install -r requirements.txt \
-	&& rm requirements.txt
 
 USER playme
 
