@@ -11,9 +11,8 @@ class ControladorPrestamo:
 
 		if juego.id not in self.prestamos:
 			self.prestamos[juego.id] = p
-			return True
 		else:
-			return False
+			self.prestamos[juego.id].append(p)
 
 	def devolver_prestamo(self, juego):
 		return self.prestamos[juego.id]
