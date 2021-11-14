@@ -10,7 +10,7 @@ class ControladorPrestamo:
 		p = Prestamo(juego)
 
 		if juego.id not in self.prestamos:
-			self.prestamos[juego.id] = p
+			self.prestamos[juego.id] = [p]
 		else:
 			self.prestamos[juego.id].append(p)
 
