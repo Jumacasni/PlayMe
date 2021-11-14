@@ -1,9 +1,9 @@
 entidad:
-  - playme/src/juego.py
-  - playme/src/prestamo.py
-  - playme/src/controlador_prestamo.py
+  - playme/juego.py
+  - playme/prestamo.py
+  - playme/controlador_prestamo.py
 lenguaje: Python3.8
 test:
-  - playme/test/test_prestamo.py
-  - playme/test/test_controlador_prestamo.py
+  - tests/test_prestamo.py
+  - tests/test_controlador_prestamo.py
 fichero_tareas: tasks.py
