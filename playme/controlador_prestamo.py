@@ -42,3 +42,18 @@ class ControladorPrestamo:
 			return None
 
 		return None
+
+	def tiempo_medio(self, juego):
+		prestamos = self.prestamos[juego.id]
+
+		# Elimina el último préstamo si está activo
+		if prestamos[-1].activo:
+			prestamos = prestamos[:-1]
+
+		tiempo_total = 0
+
+		for prestamo in prestamos:
+			print(prestamo.get_tiempo_empleado())
+			tiempo_total += prestamo.get_tiempo_empleado()
+
+		return round(tiempo_total / len(prestamos), 0)
