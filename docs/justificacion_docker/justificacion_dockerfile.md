@@ -35,14 +35,10 @@ RUN apt-get update \
 	&& apt-get -y install python3.8 python3-pip \
 	&& useradd -ms /bin/bash playme \
 	&& mkdir -p /app/test \
-	&& chown playme /app/test
+	&& chown playme /app/test \
+	&& pip3 install invoke pytest assertpy
 
 WORKDIR /app/test
-
-COPY requirements.txt .
-
-RUN pip3 install -r requirements.txt \
-	&& rm requirements.txt
 
 USER playme
 
@@ -66,14 +62,10 @@ RUN apk update \
 	&& apk add bash \
 	&& adduser -D -h /home/playme -s /bin/bash playme \
 	&& mkdir -p /app/test \
-	&& chown playme /app/test
+	&& chown playme /app/test \
+	&& pip3 install invoke pytest assertpy
 
 WORKDIR /app/test
-
-COPY requirements.txt .
-
-RUN pip3 install -r requirements.txt \
-	&& rm requirements.txt
 
 USER playme
 
@@ -84,7 +76,7 @@ El contenedor ocupa **59.9MB**, que son más de 400MB de diferencia con respecto
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/docker-python-alpine.png" width="100%" height="100%">
 
-### Pypy 3.8 slime
+### Pypy 3.8 slim
 
 Este Dockerfile es el que menos capas tiene debido a que es el que menos instrucciones ```RUN```posee.
 
@@ -95,14 +87,10 @@ LABEL maintainer ="Juan Manuel Castillo Nievas <jumacasni@correo.ugr.es>"
 
 RUN useradd -ms /bin/bash playme \
 	&& mkdir -p /app/test \
-	&& chown playme /app/test
+	&& chown playme /app/test \
+	&& pip3 install invoke pytest assertpy
 
 WORKDIR /app/test
-
-COPY requirements.txt .
-
-RUN pip3 install -r requirements.txt \
-	&& rm requirements.txt
 
 USER playme
 
