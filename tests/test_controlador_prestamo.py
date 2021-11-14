@@ -76,6 +76,6 @@ def test_devolver_prestamo():
 	prestamo = Prestamo(juego)
 
 	controlador.crear_prestamo(juego)
-	res = controlador.devolver_prestamo(juego)
+	res = controlador.devolver_prestamo_activo(juego)
 
 	assert res.juego == juego
