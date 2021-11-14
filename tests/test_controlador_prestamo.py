@@ -5,7 +5,7 @@ sys.path.append('playme/')
 from prestamo import Prestamo
 from juego import Juego
 from controlador_prestamo import ControladorPrestamo
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytest
 
 def test_crear_prestamo():
@@ -79,3 +79,23 @@ def test_devolver_prestamo():
 	res = controlador.devolver_prestamo_activo(juego)
 
 	assert res.juego == juego
+
+def test_tiempo_medio():
+	controlador = ControladorPrestamo()
+	juego = Juego(1, "Aventureros al Tren")
+
+	prestamo = Prestamo(juego)
+	controlador.crear_prestamo(juego)
+	res_prestamo = controlador.devolver_prestamo_activo(juego)
+	controlador.finalizar_prestamo(res_prestamo)
+	res_prestamo.fecha_fin = datetime.now() + timedelta(minutes = 10)
+
+	prestamo2 = Prestamo(juego)
+	controlador.crear_prestamo(juego)
+	res_prestamo2 = controlador.devolver_prestamo_activo(juego)
+	controlador.finalizar_prestamo(res_prestamo2)
+	res_prestamo2.fecha_fin = datetime.now() + timedelta(minutes = 20)
+
+	res = controlador.tiempo_medio(juego)
+
+	assert res == 15
