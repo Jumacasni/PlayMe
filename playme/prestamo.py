@@ -3,10 +3,7 @@ import itertools
 
 class Prestamo:
 
-	id_iter = itertools.count()
-
 	def __init__(self, juego):
-		self.id = next(self.id_iter)
 		self.fecha_inicio = datetime.now()
 		self.fecha_fin = None
 		self.juego = juego
@@ -20,3 +17,6 @@ class Prestamo:
 			return self.fecha_fin.strftime("%d-%m-%Y %H:%M")
 
 		return None
+
+	def get_tiempo_empleado(self):
+		return round((self.fecha_fin-self.fecha_inicio).total_seconds() / 60.0, 0)

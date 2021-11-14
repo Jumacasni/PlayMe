@@ -1,46 +1,24 @@
 # Elección de gestor de tareas y justificación
 
 Los gestores de tareas que se van a discutir para este proyecto son:
-- Poetry
+- Doit
 - Invoke
 
 ---
 
-## Poetry
+## Doit
 
 **Ventajas :white_check_mark:**
 
-- Uso del fichero ```pyproject.toml``` para guardar toda la información necesaria acerca del proyecto:
+- Las dependencias se calculan dinámicamente
 
-```python
-[tool.poetry]
-name = "poet"
-version = "0.1.0"
-description = ""
-authors = ["lewoudar <XXX@XXX.com>"]
+- Está basado en ```Python```, con lo cual la forma de código ya se conoce
 
-[tool.poetry.dependencies]
-python = "^3.8"
+- Visualización DAG que es muy interesante para visualizar la dependencia de tareas
 
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
+Los ficheros necesarios para ejecutar ```Doit``` en este proyecto se puede encontrar en el [commit #f1ebf5f](https://github.com/Jumacasni/PlayMe/commit/f1ebf5f7376672b87e240f6a6e171608d0bdc6fb)
 
-[build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
-```
-
-- Se pueden ver todas las dependencias en el archivo ```poetry.lock``` que se genera automáticamente
-- Añadir una dependencia se hace de forma directa con ```poetry add requests``` (igual de rápido que eliminar una dependencia con la opción ```remove```)
-- Se puede ver de forma rápida todas las dependencias del proyecto con ```poetry show --tree```
-- Si se desconoce si se tiene la última versión de una dependencia, se puede usar ```poetry show --latest``` para ver todos los paquetes con su versión actual y la última versión de los mismos
-- Se crea un entorno virtual automáticamente
-
-**Ejemplo de uso :desktop_computer:**
-
-Los ficheros necesarios para ejecutar ```Poetry``` en este proyecto se puede encontrar en el [commit #fc4e3f5](https://github.com/Jumacasni/PlayMe/commit/fc4e3f5846e05d118516d73635d760d58a2e367a)
-
-<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/poetry.png" width="100%" height="100%">
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/doit.png" width="100%" height="100%">
 
 ---
 
@@ -78,13 +56,11 @@ Los ficheros necesarios para ejecutar ```Invoke``` en este proyecto se puede enc
 ---
 ## Conclusión
 
-**Poetry** simplifica mucho el trabajo con el archivo ```pyproject.toml``` haciendo que sea una herramienta muy potente gracias a todo lo que se puede controlar en dicho archivo. Permite manejar un entorno virtual haciendo que sólo existan las dependencias justas y necesarias.
-
-Es por esto que este proyecto va a usar **Poetry** como gestor de tareas.
+Ambos gestores están basados en ```Python```, pero finalmente se decide usar ```Invoke``` ya que el fichero queda mucho más limpio y ordenado y su Github tiene actualizaciones más frecuentes.
 
 ---
 
 ## Referencias
 
-- [Poetry](https://medium.com/analytics-vidhya/poetry-finally-an-all-in-one-tool-to-manage-python-packages-3c4d2538e828)
+- [Poetry](https://pypyr.io/)
 - [Invoke](https://www.pyinvoke.org/)
