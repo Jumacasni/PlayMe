@@ -8,7 +8,12 @@ class ControladorPrestamo:
 
 	def crear_prestamo(self, juego):
 		p = Prestamo(juego)
-		self.prestamos[juego.id] = p
+
+		if juego.id not in self.prestamos:
+			self.prestamos[juego.id] = p
+			return True
+		else:
+			return False
 
 	def finalizar_prestamo(self, prestamo):
 		if (prestamo.activo):
