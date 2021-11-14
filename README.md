@@ -16,7 +16,7 @@
 - Se ha corregido la elección del gestor de tareas [aquí](https://github.com/Jumacasni/PlayMe/issues/60)
 - Se ha eliminado el atributo *id* de un préstamo, ya que no está justificado, y se ha implementado un método que devuelve el préstamo al usuario a partir del juego [(ver aquí)](https://github.com/Jumacasni/PlayMe/issues/62)
 
-## Rúbricas
+## Rúbricas hito 3
 
 - **r1 y r2**:
 	- [Creación de Dockerfile y elección del contenedor base](docs/justificacion_docker/justificacion_dockerfile.md)
