@@ -17,3 +17,6 @@ class Prestamo:
 			return self.fecha_fin.strftime("%d-%m-%Y %H:%M")
 
 		return None
+
+	def get_tiempo_empleado(self):
+		return round((self.fecha_fin-self.fecha_inicio).total_seconds() / 60.0, 0)
