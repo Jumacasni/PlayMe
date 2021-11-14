@@ -14,8 +14,13 @@ class ControladorPrestamo:
 		else:
 			self.prestamos[juego.id].append(p)
 
-	def devolver_prestamo(self, juego):
-		return self.prestamos[juego.id]
+	def devolver_prestamo_activo(self, juego):
+		prestamo = self.prestamos[juego.id][-1]
+
+		if prestamo.activo:
+			return prestamo
+		else:
+			return None
 
 	def finalizar_prestamo(self, prestamo):
 		if (prestamo.activo):
