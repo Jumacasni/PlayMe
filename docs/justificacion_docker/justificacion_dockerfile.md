@@ -16,7 +16,7 @@ Para hacer una buena justificación, se ha creado un Dockerfile por cada imagen 
 - Uso de la etiqueta ```LABEL``` para proporcionar ayuda e información en caso de que sea necesario
 - Creación de un usuario sin privilegios para instalar lo necesario y testear la aplicación
 - Unificar lo máximo posible las instrucciones ```RUN```, ya que cada instrucción de estas genera una capa que ocupa espacio
-- Instalación de los paquetes de Python estrictamente necesarios, usando para ello el archivo ```requirements.txt``` de Python
+- Instalación de los paquetes de Python estrictamente necesarios para que pasen los tests de la aplicación
 
 ## Comparación
 
