@@ -6,7 +6,7 @@ Las imágenes que se van a usar para los contenedores van a ser las siguientes:
 
 - [Ubuntu 18.04](https://hub.docker.com/_/ubuntu): una imagen de la distribución más popular de Linux, concretamente la versión 18.04 que es la que también uso actualmente en mi ordenador
 - [Python 3.8 alpine](https://hub.docker.com/_/python): una imagen que trae lo justo y necesario para poder trabajar con Python 3.8, haciendo que se reduzca el peso de la imagen
-- [Pypy 3.8 slime](https://hub.docker.com/_/pypy): Pypy es una implementación alternativa de Python, con lo que es interesante probar esta imagen y así comparar diferencias con la anterior
+- [Pypy 3.8 slim](https://hub.docker.com/_/pypy): Pypy es una implementación alternativa de Python, con lo que es interesante probar esta imagen y así comparar diferencias con la anterior
 
 ## Pasos para crear Dockerfile con buenas prácticas
 
