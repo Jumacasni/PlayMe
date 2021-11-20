@@ -135,4 +135,39 @@ def test_juegos_mas_usados():
 	assert res[0][0] == 2 # El juego más usado es el que tiene id=2
 	assert res[1][0] == 1
 	assert res[2][0] == 3 # El juego menos usado es el que tiene id=3
-	
+
+def test_juegos_menos_usados():
+	controlador = ControladorPrestamo()
+	juego = Juego(1, "Aventureros al Tren")
+	juego2 = Juego(2, "Catan")
+	juego3 = Juego(3, "Ensalada de puntos")
+
+	prestamo = Prestamo(juego)
+	controlador.crear_prestamo(juego)
+	res_prestamo = controlador.devolver_prestamo_activo(juego)
+	controlador.finalizar_prestamo(res_prestamo)
+
+	for i in range(3):
+		prestamo = Prestamo(juego)
+		controlador.crear_prestamo(juego)
+		res_prestamo = controlador.devolver_prestamo_activo(juego)
+		controlador.finalizar_prestamo(res_prestamo)
+
+	for i in range(5):
+		prestamo = Prestamo(juego2)
+		controlador.crear_prestamo(juego2)
+		res_prestamo = controlador.devolver_prestamo_activo(juego2)
+		controlador.finalizar_prestamo(res_prestamo)
+
+	for i in range(1):
+		prestamo = Prestamo(juego3)
+		controlador.crear_prestamo(juego3)
+		res_prestamo = controlador.devolver_prestamo_activo(juego3)
+		controlador.finalizar_prestamo(res_prestamo)
+
+	res = controlador.contar_juegos_usados(mas_usados=False)
+
+	assert len(res) == 3
+	assert res[0][0] == 3 # El juego menos usado es el que tiene id=3
+	assert res[1][0] == 1
+	assert res[2][0] == 2 # El juego más usado es el que tiene id=2
