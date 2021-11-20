@@ -101,3 +101,40 @@ Lo que se pretende con este sistema de integración continua es lanzar nuestro c
 - El campo ```job``` especifica lo que queremos hacer, que en nuestro caso es lanzar nuestro contenedor que ejecuta los tests
 - En el campo ```docker``` se especifica el contenedor que se debe ejecutar
 - En el campo ```steps``` se especifican las acciones que se deben ejecutar, que debe incluir el lanzamiento de tests usando el **gestor de tareas**
+
+## Github Action
+
+Resulta interesante realizar una Github Action para la integración continua ya que esta también permite utilizar el contenedor docker. De esta forma, se ha creado el archivo [ci.yml](.github/workflows/ci.yml) previamente seleccionando la plantilla **Docker image** en las acciones del repositorio:
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/githubactionci01.png" width="100%" height="100%">
+
+El archivo archivo [ci.yml](.github/workflows/ci.yml) tiene la siguiente configuración:
+
+```
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build -t playme .
+    - name: Test
+      run: docker run -t -v `pwd`:/app/test playme
+```
+
+Lo que se hace es ```docker build``` para construir la imagen para posteriormente usar ```docker run``` montando el volumen correspondiente. De esta manera, al hacer **push** sobre el repositorio, se ejecuta esta Github Action obteniendo el éxito de los tests
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/githubactionci02.png" width="100%" height="100%">
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/githubactionci03.png" width="100%" height="100%">
