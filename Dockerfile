@@ -2,15 +2,16 @@ FROM python:3.8-alpine
 
 LABEL maintainer ="Juan Manuel Castillo Nievas <jumacasni@correo.ugr.es>"
 
+ENV PATH="/home/playme/.local/bin:${PATH}"
+
 RUN apk update \
 	&& apk add bash \
-	&& adduser -D -h /home/playme -s /bin/bash playme \
-	&& mkdir -p /app/test \
-	&& chown playme /app/test \
-	&& pip3 install invoke pytest assertpy
+	&& adduser -D playme
 
 WORKDIR /app/test
 
 USER playme
+
+RUN pip3 install invoke pytest assertpy
 
 CMD ["invoke", "test"]
