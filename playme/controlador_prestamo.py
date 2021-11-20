@@ -57,3 +57,16 @@ class ControladorPrestamo:
 			tiempo_total += prestamo.get_tiempo_empleado()
 
 		return round(tiempo_total / len(prestamos), 0)
+
+	def contar_juegos_usados(self, mas_usados):
+		if mas_usados:
+			juegos_ordenados = sorted(self.prestamos, key=lambda x: len(self.prestamos[x]), reverse=True)
+		else:
+			juegos_ordenados = sorted(self.prestamos, key=lambda x: len(self.prestamos[x]))
+
+		mapa_juegos = []
+
+		for juego in juegos_ordenados:
+			mapa_juegos.append( (juego, len(self.prestamos[juego])) )
+
+		return mapa_juegos
