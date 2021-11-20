@@ -1,5 +1,13 @@
 # Sistemas de integración continua
 
+La fase de intregación continua es **esencial** para el futuro despliegue de la aplicación.
+
+En este documento se presenta la documentación de los 3 sistemas de integración continua que se han probado para un despliegue continuo:
+
+- **Travis**: cuenta con la función de especificar distintas versiones del lenguaje para probar que el proyecto funciona correctamente en ellas.
+- **Circle CI**: con este sistema se puede hacer uso del contenedor Docker generado en el hito anterior y que está subido en **Docker Hub** y así lanzar los tests automáticamente.
+- **Github Action**: con las Github Action que proporciona Github también se puede aprovechar el contenedor Docker para lanzarlo y así lanzar los tests automáticamente. Además, es una buena combinación ya que también se hizo una Github Action en el hito anterior para subir automáticamente el contenedor a **Docker Hub** en cada ```push```.
+
 ## Travis
 
 Para integrar este sistema en este proyecto se ha seguido el [tutorial](https://docs.travis-ci.com/user/tutorial/) disponible en su página web:
