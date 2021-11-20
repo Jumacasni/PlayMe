@@ -1,6 +1,6 @@
 # Sistemas de integración continua
 
-# Travis
+## Travis
 
 Para integrar este sistema en este proyecto se ha seguido el [tutorial](https://docs.travis-ci.com/user/tutorial/) disponible en su página web:
 
@@ -50,3 +50,54 @@ La versión **3.10.0** sólo está disponible en **aarch64** de la distribución
 4. En Travis se puede ver que pasan todos los *checks*
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/travis04.png" width="100%" height="100%">
+
+## Circle CI
+
+Para usar este sistema de integración continua se han seguido los [pasos](https://circleci.com/docs/2.0/first-steps/) y [configuración](https://circleci.com/docs/2.0/configuration-reference/) de su página web:
+
+1. Iniciar sesión usando la cuenta de Github
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci01.png" width="100%" height="100%">
+
+2. Se selecciona el repositorio de este proyecto
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci02.png" width="100%" height="100%">
+
+3. Se crea el archivo [.circleci/config.yml](.circleci/config.yml) con ayuda de la interfaz web para asegurar que la sintaxis es correcta (el contenido se explica más adelante)
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci03.png" width="100%" height="100%">
+
+4. Se sube el archivo a la rama ```main``` del repositorio y se selecciona en la interfaz web de Circle CI
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci04.png" width="100%" height="100%">
+
+5. Se ejecutan los tests y pasan con éxito
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci05.png" width="100%" height="100%">
+
+### Config.yml
+
+El fichero [.circleci/config.yml](.circleci/config.yml) cuenta con la siguiente configuración:
+
+```
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: jumacasni/playme:latest
+    steps:
+      - checkout
+      - run: invoke test
+
+workflows:
+  test_playme:
+    jobs:
+      - test
+```
+
+Lo que se pretende con este sistema de integración continua es lanzar nuestro contenedor de tests que se hizo en el hito anterior. Para lanzar imágenes Docker con Circle CI se ha seguido la [documentación](https://circleci.com/docs/2.0/building-docker-images/) disponible en su página web.
+
+- El campo ```job``` especifica lo que queremos hacer, que en nuestro caso es lanzar nuestro contenedor que ejecuta los tests
+- En el campo ```docker``` se especifica el contenedor que se debe ejecutar
+- En el campo ```steps``` se especifican las acciones que se deben ejecutar, que debe incluir el lanzamiento de tests usando el **gestor de tareas**
