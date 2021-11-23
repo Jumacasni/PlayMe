@@ -1,0 +1,14 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: jumacasni/playme:latest
+    steps:
+      - checkout
+      - run: invoke test
+
+workflows:
+  test_playme:
+    jobs:
+      - test
