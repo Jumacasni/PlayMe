@@ -53,6 +53,10 @@ El contenedor ocupa **520MB**.
 
 Para la construcción de este contenedor se debe instalar [bash](https://stackoverflow.com/questions/40944479/docker-how-to-use-bash-with-an-alpine-based-docker-image), ya que ```alpine``` no lo instala por defecto, y se añade un usuario usando ```adduser``` en lugar de ```useradd``` [(ver aquí)](https://stackoverflow.com/questions/49955097/how-do-i-add-a-user-when-im-using-alpine-as-a-base-image).
 
+Ha sido necesario instalar ```bash``` ya que al ejecutar el contenedor sin tenerlo instalado se obtiene el siguiente error:
+
+<img src="https://github.com/Jumacasni/PlayMe/blob/main/img/justificacion-bash.png" width="100%" height="100%">
+
 ```
 FROM python:3.8-alpine
 
