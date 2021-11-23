@@ -71,7 +71,7 @@ Para usar este sistema de integración continua se han seguido los [pasos](https
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci02.png" width="100%" height="100%">
 
-3. Se crea el archivo [.circleci/config.yml](.circleci/config.yml) con ayuda de la interfaz web para asegurar que la sintaxis es correcta (el contenido se explica más adelante)
+3. Se crea el archivo [.circleci/config.yml](https://github.com/Jumacasni/PlayMe/blob/main/.circleci/config.yml) con ayuda de la interfaz web para asegurar que la sintaxis es correcta (el contenido se explica más adelante)
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/circleci03.png" width="100%" height="100%">
 
@@ -85,7 +85,7 @@ Para usar este sistema de integración continua se han seguido los [pasos](https
 
 ### Config.yml
 
-El fichero [.circleci/config.yml](.circleci/config.yml) cuenta con la siguiente configuración:
+El fichero [.circleci/config.yml](https://github.com/Jumacasni/PlayMe/blob/main/.circleci/config.yml) cuenta con la siguiente configuración:
 
 ```
 version: 2.1
@@ -112,11 +112,11 @@ Lo que se pretende con este sistema de integración continua es lanzar nuestro c
 
 ## Github Action
 
-Resulta interesante realizar una Github Action para la integración continua ya que esta también permite utilizar el contenedor docker. De esta forma, se ha creado el archivo [ci.yml](.github/workflows/ci.yml) previamente seleccionando la plantilla **Docker image** en las acciones del repositorio:
+Resulta interesante realizar una Github Action para la integración continua ya que esta también permite utilizar el contenedor docker. De esta forma, se ha creado el archivo [ci.yml](https://github.com/Jumacasni/PlayMe/blob/main/.github/workflows/ci.yml) previamente seleccionando la plantilla **Docker image** en las acciones del repositorio:
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/githubactionci01.png" width="100%" height="100%">
 
-El archivo archivo [ci.yml](.github/workflows/ci.yml) tiene la siguiente configuración:
+El archivo archivo [ci.yml](https://github.com/Jumacasni/PlayMe/blob/main/.github/workflows/ci.yml) tiene la siguiente configuración:
 
 ```
 name: Docker Image CI
