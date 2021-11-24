@@ -1,6 +1,6 @@
 # PlayMe
 
-:warning: **Este proyecto aún está en desarrollo** *(versión 4.1)* :warning:
+:warning: **Este proyecto aún está en desarrollo** *(versión 4.2)* :warning:
 
 🔧 [Configuración del entorno](docs/configuracion_git.md)
 
