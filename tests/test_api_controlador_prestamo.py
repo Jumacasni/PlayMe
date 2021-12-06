@@ -16,7 +16,7 @@ def test_crear_prestamo():
 		json={"id": 1, "nombre": "Aventureros al Tren"}
 	)
 
-	assert_that(response.status_code).is_equal_to(200)
+	assert_that(response.status_code).is_equal_to(201)
 
 def test_devolver_prestamo():
 	response = client.get("/prestamo",
@@ -30,7 +30,7 @@ def test_finalizar_prestamo():
 		json={"id": 1, "nombre": "Aventureros al Tren"}
 	)
 
-	assert_that(response.status_code).is_equal_to(200)
+	assert_that(response.status_code).is_equal_to(201)
 
 def test_finalizar_prestamo_fail():
 	response = client.post("/finalizar_prestamo",

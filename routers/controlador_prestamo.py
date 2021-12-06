@@ -17,7 +17,7 @@ class JuegoModel(BaseModel):
 	nombre: str
 
 # [HU1] Como usuario, necesito saber cuánto tiempo restante le queda a un préstamo
-@router.post("/prestamo")
+@router.post("/prestamo", status_code=201)
 def crear_prestamo(juego: JuegoModel):
 	juego = Juego(juego.id, juego.nombre)
 	controlador.crear_prestamo(juego)
@@ -32,7 +32,7 @@ def devolver_prestamo(juego: JuegoModel):
 
 	return res
 
-@router.post("/finalizar_prestamo")
+@router.post("/finalizar_prestamo", status_code=201)
 def finalizar_prestamo(juego: JuegoModel):
 	juego = Juego(juego.id, juego.nombre)
 	prestamo = controlador.devolver_prestamo_activo(juego)
