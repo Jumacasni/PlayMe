@@ -38,3 +38,23 @@ client = TestClient(app)
 def test_read_main():
 	response = client.get("/")
 ```
+
+## Sanic
+
+Su [repositorio](https://github.com/sanic-org/sanic) cuenta con más de 15k estrellas y casi 300 contribuidores al igual que **FastAPI**, con la diferencia de que este framework es más viejo.
+
+Cuenta también con el uso de ```async/await``` y su sintaxis es bastante parecida a la de **FastAPI**, además de contar con un módulo para devolver la respuesta en formato **JSON**:
+
+```python
+from sanic import Sanic
+from sanic.response import json
+
+app = Sanic("My Hello, world app")
+
+@app.route('/')
+async def test(request):
+    return json({'hello': 'world'})
+```
+
+Para importar un cliente para testear la API se encuentra [sanic-testing](https://github.com/sanic-org/sanic-testing), ya que el módulo ```testing``` que viene por defecto en Sanic se va a eliminar en un futuro. Hay que tener en cuenta que este módulo es muy reciente y todavía cuenta con **TODO**, con lo cual puede que sea pronto para poder usarlo.
+
