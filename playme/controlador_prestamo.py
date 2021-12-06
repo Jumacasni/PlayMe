@@ -15,6 +15,9 @@ class ControladorPrestamo:
 			self.prestamos[juego.id].append(p)
 
 	def devolver_prestamo_activo(self, juego):
+		if juego.id not in self.prestamos:
+			return None
+
 		prestamo = self.prestamos[juego.id][-1]
 
 		if prestamo.activo:
@@ -53,7 +56,6 @@ class ControladorPrestamo:
 		tiempo_total = 0
 
 		for prestamo in prestamos:
-			print(prestamo.get_tiempo_empleado())
 			tiempo_total += prestamo.get_tiempo_empleado()
 
 		return round(tiempo_total / len(prestamos), 0)
