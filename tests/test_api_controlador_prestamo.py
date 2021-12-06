@@ -17,3 +17,10 @@ def test_crear_prestamo():
 	)
 
 	assert_that(response.status_code).is_equal_to(200)
+
+def test_devolver_prestamo():
+	response = client.get("/prestamo",
+		json={"id": 1, "nombre": "Aventureros al Tren"}
+	)
+
+	assert_that(response.status_code).is_equal_to(200)
