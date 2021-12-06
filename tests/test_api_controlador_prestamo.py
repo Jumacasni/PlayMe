@@ -70,16 +70,12 @@ def test_tiempo_restante_fail():
 
 # [HU2] Como usuario, quiero conocer el tiempo medio estimado de un juego
 def test_tiempo_medio():
-	response = client.get("/tiempo_medio",
-		json={"id": 1, "nombre": "Aventureros al Tren"}
-	)
+	response = client.get("/tiempo_medio/1")
 
 	assert_that(response.status_code).is_equal_to(200)
 
 def test_tiempo_medio_fail():
-	response = client.get("/tiempo_medio",
-		json={"id": 2, "nombre": "Ensalada de puntos"}
-	)
+	response = client.get("/tiempo_medio/2")
 
 	res = json.loads(response.text)
 

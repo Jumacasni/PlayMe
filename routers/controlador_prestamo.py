@@ -57,9 +57,9 @@ def tiempo_restante(id: int):
 	return res
 
 # [HU2] Como usuario, quiero conocer el tiempo medio estimado de un juego
-@router.get("/tiempo_medio")
-def tiempo_medio(juego: JuegoModel):
-	juego = Juego(juego.id, juego.nombre)
+@router.get("/tiempo_medio/{id}")
+def tiempo_medio(id: int):
+	juego = Juego(id)
 
 	res = controlador.tiempo_medio(juego)
 
