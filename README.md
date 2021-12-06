@@ -1,6 +1,6 @@
 # PlayMe
 
-:warning: **Este proyecto aún está en desarrollo** *(versión 4.2)* :warning:
+:warning: **Este proyecto aún está en desarrollo** *(versión 5.1)* :warning:
 
 🔧 [Configuración del entorno](docs/configuracion_git.md)
 
@@ -12,28 +12,22 @@
 
 ## Rúbricas hito 4
 
-- **R1: Integración continua funcionando y correcta justificación de la misma**:
-	- [Justificación y documentación de uso de Travis](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_ci/sistemas_ci.md#travis)
-	- [.travis.yml](.travis.yml)
-- **R2: configuración de algún sistema de integración continua adicional**:
-	- **Circle CI**:
-		- [Justificación y documentación de uso de Circle CI](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_ci/sistemas_ci.md#circle-ci)
-		- [.circleci/config.yml](https://github.com/Jumacasni/PlayMe/blob/main/.circleci/config.yml)
-	- **Github Action**:
-		- [Justificación y documentación de uso de Github Action](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_ci/sistemas_ci.md#github-action)
-		- [.github/workflows/ci.yml](https://github.com/Jumacasni/PlayMe/blob/main/.github/workflows/ci.yml)
+- **R1: Justificación técnica del framework elegido para el microservicio**:
+	- [Elección del framework para el microservicio](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_microservicios/justificacion_framework.md)
 
-- **R3: uso correcto del gestor de tareas y otras buenas prácticas en todos los casos anteriores**:
-	- Incluido en los archivos de **R1** y **R2**
+- **R2: Diseño en general del API, las rutas (o tareas), tests y documentación de todo, justificando como se ajustan a las historias de usuario, de forma que reflejen correctamente un diseño por capas que desacopla la lógica de negocio del API**:
+	- [Diseño general de la API](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_microservicios/disenio_api.md)
+	- Rutas implementadas: [routers/controlador_prestamo.py](https://github.com/Jumacasni/PlayMe/blob/main/routers/controlador_prestamo.py)
+	- Tests implementados: [tests/test_api_controlador_prestamo.py](https://github.com/Jumacasni/PlayMe/blob/main/tests/test_api_controlador_prestamo.py)
 
-- **R4: aprovechamiento del contenedor de Docker generado en el hito anterior en alguno de los sistemas de CI**:
-	- Se ha aprovechado el contenedor Docker en **Circle CI** [(.circleci/config.yml)](https://github.com/Jumacasni/PlayMe/blob/main/.circleci/config.yml) y **Github Action** [(.github/workflows/ci.yml)](https://github.com/Jumacasni/PlayMe/blob/main/.github/workflows/ci.yml)
+- **R3: uso de buenas prácticas: configuración distribuida.**:
+	- [Documentación de configuración distribuida](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_microservicios/configuracion_distribuida.md)
 
-Además, se ha hecho un [avance de código](docs/avance_codigo/avance_hito4.md) del proyecto
-
-## Correcciones realizadas del hito 3
-
-- Se ha corregido el Dockerfile para ejecutar ```pip``` sin privilegios de superusuario y se justifica la adición de ```bash``` [aquí](https://github.com/Jumacasni/PlayMe/issues/66)
+- **R4: uso de logs, incluyendo justificación del framework y herramienta elegida.**
+	- [Elección y justifcación del framework usado](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_microservicios/justificacion_logs.md)
+	- Uso de loguru en [routers/controlador_prestamo.py](https://github.com/Jumacasni/PlayMe/blob/main/routers/controlador_prestamo.py)
+- **R5: tests correctos y de acuerdo con las historias de usuario.**:
+	- Incluido en los tests implementados en **R2**
 
 ## Documentación adicional
 
@@ -44,6 +38,9 @@ Además, se ha hecho un [avance de código](docs/avance_codigo/avance_hito4.md) 
 - [Dockerfile](Dockerfile)
 - [Subida del contenedor a Docker Hub con actualización automática](docs/justificacion_docker/justificacion_dockerhub.md)
 - [Subida del contenedor a Github Container Registry](docs/justificacion_docker/justificacion_gcr.md)
+- [Justificación y documentación de uso de Travis](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_ci/sistemas_ci.md#travis)
+- [Justificación y documentación de uso de Circle CI](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_ci/sistemas_ci.md#circle-ci)
+- [Justificación y documentación de uso de Github Action](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_ci/sistemas_ci.md#github-action)
 
 ## Licencia 📄
 
