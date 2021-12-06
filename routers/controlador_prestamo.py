@@ -21,3 +21,13 @@ class JuegoModel(BaseModel):
 def crear_prestamo(juego: JuegoModel):
 	juego = Juego(juego.id, juego.nombre)
 	controlador.crear_prestamo(juego)
+
+@router.get("/prestamo")
+def devolver_prestamo(juego: JuegoModel):
+	juego = Juego(juego.id, juego.nombre)
+	res = controlador.devolver_prestamo_activo(juego)
+
+	if res is None:
+		raise HTTPException(status_code=404, detail="El préstamo no está activo")
+
+	return res
