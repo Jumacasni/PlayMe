@@ -43,3 +43,15 @@ def finalizar_prestamo(juego: JuegoModel):
 		raise HTTPException(status_code=404, detail="El préstamo no está activo")
 
 	return res
+
+@router.get("/tiempo_restante")
+def tiempo_restante(juego: JuegoModel):
+	juego = Juego(juego.id, juego.nombre)
+	prestamo = controlador.devolver_prestamo_activo(juego)
+
+	res = controlador.tiempo_restante(prestamo)
+
+	if res is None:
+		raise HTTPException(status_code=404, detail="El préstamo no está activo")
+
+	return res
