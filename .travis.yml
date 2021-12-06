@@ -10,7 +10,7 @@ arch:
   - aarch64
 
 before_install:
-  - pip3 install invoke pytest assertpy
+  - pip3 install invoke pytest assertpy fastapi
 
 script:
   - invoke test

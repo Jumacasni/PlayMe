@@ -15,6 +15,9 @@ class ControladorPrestamo:
 			self.prestamos[juego.id].append(p)
 
 	def devolver_prestamo_activo(self, juego):
+		if juego.id not in self.prestamos:
+			return None
+
 		prestamo = self.prestamos[juego.id][-1]
 
 		if prestamo.activo:
@@ -23,6 +26,9 @@ class ControladorPrestamo:
 			return None
 
 	def finalizar_prestamo(self, prestamo):
+		if prestamo is None:
+			return False
+
 		if (prestamo.activo):
 			prestamo.activo = False
 			prestamo.fecha_fin = datetime.now()
@@ -32,6 +38,9 @@ class ControladorPrestamo:
 			return False
 
 	def tiempo_restante(self, prestamo):
+		if prestamo is None:
+			return None
+
 		if (prestamo.activo):
 			if (datetime.now() > prestamo.fecha_inicio):
 				diferencia_hora = datetime.now() - prestamo.fecha_inicio
@@ -44,6 +53,9 @@ class ControladorPrestamo:
 		return None
 
 	def tiempo_medio(self, juego):
+		if juego.id not in self.prestamos:
+			return None
+			
 		prestamos = self.prestamos[juego.id]
 
 		# Elimina el último préstamo si está activo
@@ -53,7 +65,6 @@ class ControladorPrestamo:
 		tiempo_total = 0
 
 		for prestamo in prestamos:
-			print(prestamo.get_tiempo_empleado())
 			tiempo_total += prestamo.get_tiempo_empleado()
 
 		return round(tiempo_total / len(prestamos), 0)
