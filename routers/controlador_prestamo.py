@@ -67,4 +67,16 @@ def tiempo_medio(juego: JuegoModel):
 		raise HTTPException(status_code=404, detail="No existe el juego")
 
 	return res
-	
+
+# [HU3] Como usuario, quiero saber cuáles son los juegos que más y menos usa la gente
+@router.get("/mas_usados")
+def juegos_mas_usados():
+	res = controlador.contar_juegos_usados(True)
+
+	return res
+
+@router.get("/menos_usados")
+def juegos_menos_usados():
+	res = controlador.contar_juegos_usados(False)
+
+	return res
