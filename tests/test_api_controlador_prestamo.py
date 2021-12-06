@@ -76,3 +76,21 @@ def test_tiempo_restante():
 
 	assert_that(response.status_code).is_equal_to(404)
 	assert_that(res["detail"]).is_equal_to("El préstamo no está activo")
+
+# [HU2] Como usuario, quiero conocer el tiempo medio estimado de un juego
+def test_tiempo_medio():
+	response = client.get("/tiempo_medio",
+		json={"id": 1, "nombre": "Aventureros al Tren"}
+	)
+
+	assert_that(response.status_code).is_equal_to(200)
+
+def test_tiempo_medio_fail():
+	response = client.get("/tiempo_medio",
+		json={"id": 2, "nombre": "Ensalada de puntos"}
+	)
+
+	res = json.loads(response.text)
+
+	assert_that(response.status_code).is_equal_to(404)
+	assert_that(res["detail"]).is_equal_to("No existe el juego")
