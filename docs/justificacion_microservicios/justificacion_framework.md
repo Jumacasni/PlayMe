@@ -73,3 +73,9 @@ def test_app():
     client = TestClient(app)
 ```
 
+## Conclusiones y elección final
+
+- Se descarta el uso de **Sanic** ya que el módulo **testing** que incluye va a desaparecer en un futuro y la librería ```sanic-testing``` es demasiado nueva, con lo cual puede que aún sea inestable
+- Aunque **FastAPI** y **Starlette** sean ambos muy recientes, sí que es cierto que **FastAPI** cuenta con más contribuidores y tiene mucha más colaboración en Github (fijándonos en la cantidad de estrellas y contribuidores en sus repositorios)
+
+Teniendo en cuenta estos apuntes, finalmente se decide optar por el uso de **FastAPI**.
