@@ -25,6 +25,8 @@ logger.warning('Warning')
 
 A pesar de que ambas librerías tienen una sintaxis muy parecida, la salida que producen tanto en consola como en un fichero es mucho más informativa en **loguru**, y por ello es el framework que se va a usar para el logging.
 
+Para poder ver los logs de **loguru** en la consola he creado el archivo [server.py](server.py) y lanzar la aplicación con [uvicorn](https://www.uvicorn.org/).
+
 En la siguiente imagen se puede ver el uso de **loguru** en este proyecto:
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/loguru.png" width="100%" height="100%">
