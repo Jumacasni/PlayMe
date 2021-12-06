@@ -55,3 +55,16 @@ def tiempo_restante(juego: JuegoModel):
 		raise HTTPException(status_code=404, detail="El préstamo no está activo")
 
 	return res
+
+# [HU2] Como usuario, quiero conocer el tiempo medio estimado de un juego
+@router.get("/tiempo_medio")
+def tiempo_medio(juego: JuegoModel):
+	juego = Juego(juego.id, juego.nombre)
+
+	res = controlador.tiempo_medio(juego)
+
+	if res is None:
+		raise HTTPException(status_code=404, detail="No existe el juego")
+
+	return res
+	
