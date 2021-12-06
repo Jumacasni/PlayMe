@@ -4,7 +4,10 @@ Para el diseño de la API usando **FastAPI** se han tenido en cuenta las siguien
 
 - Se ha creado una carpeta [routers](https://github.com/Jumacasni/PlayMe/tree/main/routers) donde se almacenan los distintos archivos que contienen las rutas de cada clase y se adjuntan todas las rutas en el fichero principal [app.py](https://github.com/Jumacasni/PlayMe/tree/main/app.py) (por ahora sólo hay un fichero de routers, pero habrá más en el futuro)
 - **FastAPI** hace uso de la librería [pydantic](https://pydantic-docs.helpmanual.io/) que permite crear modelos de clases para realizar una validación de datos de forma automática
-- Se unifican lo máximo posible las rutas de forma que un mismo endpoint sirva tanto para un **get** como para un **post** (en este caso)
+- Los métodos **GET** normalmente no tienen nada en el cuerpo
+- Los métodos **POST** si usan el cuerpo de la petición
+- Se devuelve un **201** cuando se crea algún recurso, como por ejemplo un préstamo
+- Se devuelve **404** cuando no se encuentra el préstamo o juego
 
 A los endpoints que requieren de un juego como argumento, este argumento se le pasa en el *request body* a través de la clase *JuegoModel* usando la librería **pydantic**:
 
