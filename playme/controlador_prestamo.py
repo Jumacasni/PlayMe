@@ -26,6 +26,9 @@ class ControladorPrestamo:
 			return None
 
 	def finalizar_prestamo(self, prestamo):
+		if prestamo is None:
+			return False
+
 		if (prestamo.activo):
 			prestamo.activo = False
 			prestamo.fecha_fin = datetime.now()
