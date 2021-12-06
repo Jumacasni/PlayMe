@@ -18,7 +18,7 @@ A modo de simulación, en mi máquina local y usando ```etcdctl``` (etcd command
 
 <img src="https://github.com/Jumacasni/PlayMe/blob/main/img/etcd.png" width="100%" height="100%">
 
-A continuación, he creado un archivo [server.py](server.py) para simular el lanzamiento de la aplicación retomando el puerto y el host usando el paquete de Python3:
+A continuación, he creado un archivo [server.py](https://github.com/Jumacasni/PlayMe/blob/main/server.py) para simular el lanzamiento de la aplicación retomando el puerto y el host usando el paquete de Python3:
 
 ```python
 if __name__ == "__main__":
