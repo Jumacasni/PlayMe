@@ -23,4 +23,4 @@ logger.info('Information message')
 logger.warning('Warning')
 ```
 
-A pesar de que ambas librerías tienen una sintaxis muy parecida, la salida que producen tanto en consola como en un fichero es mucho más informativa en **luguru**, y por ello es el framework que se va a usar para el logging.
+A pesar de que ambas librerías tienen una sintaxis muy parecida, la salida que producen tanto en consola como en un fichero es mucho más informativa en **loguru**, y por ello es el framework que se va a usar para el logging.
