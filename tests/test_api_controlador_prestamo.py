@@ -52,9 +52,7 @@ def test_tiempo_restante():
 		json={"id": 1, "nombre": "Aventureros al Tren"}
 	)
 
-	response = client.get("/tiempo_restante",
-		json={"id": 1, "nombre": "Aventureros al Tren"}
-	)
+	response = client.get("/tiempo_restante/1")
 
 	assert_that(response.status_code).is_equal_to(200)
 
@@ -63,9 +61,7 @@ def test_tiempo_restante_fail():
 		json={"id": 1, "nombre": "Aventureros al Tren"}
 	)
 
-	response = client.get("/tiempo_restante",
-		json={"id": 1, "nombre": "Aventureros al Tren"}
-	)
+	response = client.get("/tiempo_restante/1")
 
 	res = json.loads(response.text)
 

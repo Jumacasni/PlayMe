@@ -44,9 +44,9 @@ def finalizar_prestamo(juego: JuegoModel):
 
 	return res
 
-@router.get("/tiempo_restante")
-def tiempo_restante(juego: JuegoModel):
-	juego = Juego(juego.id, juego.nombre)
+@router.get("/tiempo_restante/{id}")
+def tiempo_restante(id: int):
+	juego = Juego(id)
 	prestamo = controlador.devolver_prestamo_activo(juego)
 
 	res = controlador.tiempo_restante(prestamo)
