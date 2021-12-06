@@ -17,6 +17,7 @@ def test_salida_fecha_inicio():
 def test_salida_fecha_fin():
 	juego = Juego(1, "Aventureros al Tren")
 	prestamo = Prestamo(juego)
+	prestamo.activo = False
 	prestamo.fecha_fin = datetime.now()
 
 	formato = "%d-%m-%Y %H:%M"
