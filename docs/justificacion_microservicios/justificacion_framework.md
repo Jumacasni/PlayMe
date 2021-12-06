@@ -1,0 +1,40 @@
+# Elección de framework para microservicio
+
+Un requisito fundamental para la elección del framework es que este proporcione una funcionalidad de testing para **levantar el cliente con el test**, es decir, **sin necesidad de un servidor**. Es por ello que se van a discutir los siguientes frameworks:
+
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Sanic](https://sanic.readthedocs.io/en/stable/)
+- [Starlette](https://github.com/encode/starlette)
+
+## FastAPI
+
+Su [repositorio](https://github.com/tiangolo/fastapi) cuenta con más de 39k estrellas y cuenta con casi 300 contribuidores, con lo cual es un framework que está al día y tiene un mantenimiento muy frecuente. 
+
+Es uno de los frameworks **más rápidos**, tal y como se puede ver en [este estudio de performance](https://github.com/tiangolo/fastapi#performance).
+
+Permite la creación de una API tanto **síncrona** como **asíncrona** simplemente añadiendo ```async``` en la definición del método:
+
+```python
+# Síncrono
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+```
+
+```python
+# Asíncrono
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
+```
+
+Incluye el módulo ```TestClient``` a través del cual permite testear la API sin necesidad de levantar un servidor:
+
+```python
+from fastapi.testclient import TestClient
+
+client = TestClient(app)
+
+def test_read_main():
+	response = client.get("/")
+```
