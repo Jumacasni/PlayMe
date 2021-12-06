@@ -9,5 +9,5 @@ def build(ctx):
     print("Building!")
 
 @task
-def clean(ctx):
+def install(ctx):
     print("Cleaning!") 
