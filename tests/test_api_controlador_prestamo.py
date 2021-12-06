@@ -63,7 +63,7 @@ def test_tiempo_restante():
 
 	assert_that(response.status_code).is_equal_to(200)
 
-def test_tiempo_restante():
+def test_tiempo_restante_fail():
 	client.post("/finalizar_prestamo",
 		json={"id": 1, "nombre": "Aventureros al Tren"}
 	)
