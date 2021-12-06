@@ -8,9 +8,9 @@ from juego import Juego
 from prestamo import Prestamo
 from controlador_prestamo import ControladorPrestamo
 
-router = APIRouter()
-
 controlador = ControladorPrestamo()
+
+router = APIRouter()
 
 class JuegoModel(BaseModel):
 	id: int
