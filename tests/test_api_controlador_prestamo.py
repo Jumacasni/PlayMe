@@ -51,3 +51,28 @@ def test_devolver_prestamo_fail():
 
 	assert_that(response.status_code).is_equal_to(404)
 	assert_that(res["detail"]).is_equal_to("El préstamo no está activo")
+
+def test_tiempo_restante():
+	client.post("/prestamo",
+		json={"id": 1, "nombre": "Aventureros al Tren"}
+	)
+
+	response = client.get("/tiempo_restante",
+		json={"id": 1, "nombre": "Aventureros al Tren"}
+	)
+
+	assert_that(response.status_code).is_equal_to(200)
+
+def test_tiempo_restante():
+	client.post("/finalizar_prestamo",
+		json={"id": 1, "nombre": "Aventureros al Tren"}
+	)
+
+	response = client.get("/tiempo_restante",
+		json={"id": 1, "nombre": "Aventureros al Tren"}
+	)
+
+	res = json.loads(response.text)
+
+	assert_that(response.status_code).is_equal_to(404)
+	assert_that(res["detail"]).is_equal_to("El préstamo no está activo")
