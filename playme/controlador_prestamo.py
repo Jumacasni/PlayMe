@@ -53,6 +53,9 @@ class ControladorPrestamo:
 		return None
 
 	def tiempo_medio(self, juego):
+		if juego.id not in self.prestamos:
+			return None
+			
 		prestamos = self.prestamos[juego.id]
 
 		# Elimina el último préstamo si está activo
