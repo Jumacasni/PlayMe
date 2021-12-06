@@ -12,6 +12,6 @@ WORKDIR /app/test
 
 USER playme
 
-RUN pip3 install invoke pytest assertpy fastapi
+RUN pip3 install invoke pytest assertpy fastapi requests
 
 CMD ["invoke", "test"]
