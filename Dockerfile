@@ -12,6 +12,6 @@ WORKDIR /app/test
 
 USER playme
 
-RUN pip3 install invoke pytest assertpy fastapi requests
+RUN pip3 install invoke pytest assertpy fastapi requests loguru
 
 CMD ["invoke", "test"]

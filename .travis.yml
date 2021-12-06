@@ -10,7 +10,7 @@ arch:
   - aarch64
 
 before_install:
-  - pip3 install invoke pytest assertpy fastapi requests
+  - pip3 install invoke pytest assertpy fastapi requests loguru
 
 script:
   - invoke test
