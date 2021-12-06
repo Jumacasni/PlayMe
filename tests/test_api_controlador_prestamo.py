@@ -94,3 +94,22 @@ def test_tiempo_medio_fail():
 
 	assert_that(response.status_code).is_equal_to(404)
 	assert_that(res["detail"]).is_equal_to("No existe el juego")
+
+# [HU3] Como usuario, quiero saber cuáles son los juegos que más y menos usa la gente
+def test_juegos_mas_usados():
+	response = client.get("/mas_usados")
+
+	res = json.loads(response.text)
+
+	assert_that(response.status_code).is_equal_to(200)
+	assert_that(len(res)).is_equal_to(1) # Sólo hay préstamos de un juego
+	assert_that(res[0][1]).is_equal_to(2) # Se ha jugado dos veces
+
+def test_juegos_menos_usados():
+	response = client.get("/menos_usados")
+
+	res = json.loads(response.text)
+
+	assert_that(response.status_code).is_equal_to(200)
+	assert_that(len(res)).is_equal_to(1) # Sólo hay préstamos de un juego
+	assert_that(res[0][1]).is_equal_to(2) # Se ha jugado dos veces
