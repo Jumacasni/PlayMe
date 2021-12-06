@@ -38,6 +38,9 @@ class ControladorPrestamo:
 			return False
 
 	def tiempo_restante(self, prestamo):
+		if prestamo is None:
+			return None
+
 		if (prestamo.activo):
 			if (datetime.now() > prestamo.fecha_inicio):
 				diferencia_hora = datetime.now() - prestamo.fecha_inicio
