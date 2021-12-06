@@ -12,19 +12,15 @@ from datetime import datetime
 
 router = APIRouter(prefix="/prestamo")
 
-class JuegoModel(BaseModel):
-	id: int
-	nombre: str
-
 class PrestamoModel(BaseModel):
 	fecha_inicio: Optional[datetime]
 	fecha_fin: Optional[datetime]
-	juego: JuegoModel
+	juego: int
 	activo: Optional[bool]
 
-@router.get("/fecha_inicio")
-def crear_prestamo(prestamo: PrestamoModel):
-	prestamo = Prestamo(Juego(prestamo.juego.id, prestamo.juego.nombre))
+@router.get("/fecha_inicio/{id}")
+def crear_prestamo(id: int):
+	prestamo = Prestamo(Juego(id))
 	
 	return prestamo.get_fecha_inicio()
 

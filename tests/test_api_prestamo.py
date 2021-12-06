@@ -12,9 +12,7 @@ import json
 client = TestClient(app)
 
 def test_get_fecha_inicio():
-	response = client.get("/prestamo/fecha_inicio",
-		json={"juego": {"id": 1, "nombre": "Aventureros al Tren"}}
-	)
+	response = client.get("/prestamo/fecha_inicio/1")
 
 	assert_that(response.status_code).is_equal_to(200)
 
