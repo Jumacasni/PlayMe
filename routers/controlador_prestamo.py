@@ -22,9 +22,9 @@ def crear_prestamo(juego: JuegoModel):
 	juego = Juego(juego.id, juego.nombre)
 	controlador.crear_prestamo(juego)
 
-@router.get("/prestamo")
-def devolver_prestamo(juego: JuegoModel):
-	juego = Juego(juego.id, juego.nombre)
+@router.get("/prestamo/{id}")
+def devolver_prestamo(id: int):
+	juego = Juego(id)
 	res = controlador.devolver_prestamo_activo(juego)
 
 	if res is None:
