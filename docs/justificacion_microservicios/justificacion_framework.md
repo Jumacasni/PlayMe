@@ -58,3 +58,18 @@ async def test(request):
 
 Para importar un cliente para testear la API se encuentra [sanic-testing](https://github.com/sanic-org/sanic-testing), ya que el módulo ```testing``` que viene por defecto en Sanic se va a eliminar en un futuro. Hay que tener en cuenta que este módulo es muy reciente y todavía cuenta con **TODO**, con lo cual puede que sea pronto para poder usarlo.
 
+## Starlette
+
+Su [repositorio](https://github.com/encode/starlette) cuenta con más de 6k de estrellas y casi 200 contribuidores. Es el que menos tiene con respecto a los dos frameworks anteriores.
+
+Uno de los puntos fuertes de este framework es que tiene una buena performance en servicios **asíncronos**.
+
+Incluye el módulo [TestClient](https://www.starlette.io/testclient/) para poder testear fácilmente sin necesidad de levantar un servidor:
+
+```python
+from starlette.testclient import TestClient
+
+def test_app():
+    client = TestClient(app)
+```
+
