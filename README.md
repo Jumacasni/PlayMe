@@ -10,7 +10,7 @@
 
 :airplane: [Planificación de hitos y HUs](docs/planificacion.md)
 
-## Rúbricas hito 4
+## Rúbricas hito 5
 
 - **R1: Justificación técnica del framework elegido para el microservicio**:
 	- [Elección del framework para el microservicio](https://github.com/Jumacasni/PlayMe/blob/main/docs/justificacion_microservicios/justificacion_framework.md)
